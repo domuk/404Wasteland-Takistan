@@ -12,7 +12,7 @@ _countActual = 0;
 
 diag_log format["Static Guns Spawning Started"];
 
-while {_counter < 770} do
+while {_counter < 510} do
 {
     _pos = getMarkerPos format ["Spawn_%1", _counter];
     _newpos = [_pos, 25, 50, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;

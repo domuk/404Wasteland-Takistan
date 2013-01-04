@@ -11,6 +11,7 @@ _player = _this;
 _player removeWeapon "ItemGPS";
 removeAllWeapons _player;
 removeBackpack _player;
+enableRadio false;
 
 //Default case means something fucked up.
 _player addMagazine "6Rnd_45ACP";
@@ -50,7 +51,7 @@ _player switchMove "amovpknlmstpsraswpstdnon_gear";
 thirstLevel = 100;
 hungerLevel = 100;
 
-_player setVariable["cmoney",200,false];
+_player setVariable["cmoney",100,false];
 _player setVariable["canfood",2,false];
 _player setVariable["medkits",0,false];
 _player setVariable["water",2,false];
@@ -60,6 +61,7 @@ _player setVariable["fuelFull", 0, false];
 _player setVariable["fuelEmpty", 1, false];
 _player setVariable["bombs",false,false];
 _player setVariable["spawnBeacon",0,false];
+_player setVariable["camonet",0,false];
 
 [] execVM "client\functions\playerActions.sqf";
 

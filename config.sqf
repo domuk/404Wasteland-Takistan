@@ -1,353 +1,152 @@
-
 //	@file Version: 1.0
 //	@file Name: config.sqf
-//	@file Author: [404] Deadbeat
+//	@file Author: [404] Deadbeat, [404] Costlyy
 //	@file Created: 20/11/2012 05:13
 //	@file Description: Main config.
-//	@file Args:
 
+//Admin menu access levels
+moderators = ["32077894", //Krykiln
+				"87053254", //Shaneyport
+				"8626566", //Teacup
+				"1279378", //Bane
+				"3450176", //Derpy
+				"73698182", //unDead
+				"59344390", //Ian
+				"38204230", //JellaFish
+				"2771014", //MiniDude
+                "91598150", //Rainforger
+                "klauS"
+               	]; 
+            
+administrators = ["18519302", //Venny
+					"57199878", //Garey
+                    "13472326", //Delite
+					"bombeh"];
 
-//Main Features
-generalStores = 1;
-vehicleStores = 1;
-gunStores = 1;
+serverAdministrators = ["18836358", //Tom
+					"19714694", //pulse
+					"20243782", //Dom
+					"32879878"]; //Ally
+      
+// --------------------------------------------------------------------------------------------------- \\
+// ----------  !DO NOT CHANGE ANYTHING BELOW THIS POINT UNLESS YOU KNOW WHAT YOU ARE DOING!	---------- \\
+// ----------																				---------- \\
+// ----------			404Games are not responsible for anything that may happen 			---------- \\
+// ----------			 as a result of unauthorised modifications to this file.			---------- \\
+// --------------------------------------------------------------------------------------------------- \\
 
-maxCivVehicles = 1;
-maxMilitVehicles = 1;
-maxArmedMilitVehicles = 1;
-maxPickups = 1;
-maxObjects = 1;
-
-//Standard admin panel, use at your own risk.
-adminPanelUIDS = ["13472326","33013446","30038470","23721158","72838470","74462278","88987654","22214918","75303750","20243782","18836358","18519302"];
-
-//Heavy debuging tool, use at your own risk.
-provingGrounds = ["13472326","20243782","18836358","18519302"];
-                
+//Client Vars
+playerSetupComplete = false;
+                                                                                                
 //Gunstore Weapon List - Gun Store Base List
+// Text name, classname, buy cost, sell amount
 weaponsArray = [
-	["AK-74","AK_74",50],
-	["AK-107 Kobra","AK_107_kobra",75],
-	["AKM","AK_47_M",75],
-    ["M16A4","M16A4",75],
-    ["M4A1","M4A1",50],
-    ["M4A1 CCO","M4A1_Aim",100],
-    ["M1014","M1014",50],
-    ["Saiga 12K","Saiga12K",100],
-    ["M249","M249_EP1",250],
-    ["Mk_48 Mod","Mk_48",250],
-    ["M240","M240",250],
-    ["Pecheneg","Pecheneg",250],
-    ["RPG-7","RPG7V",300],
-    ["SMAW","SMAW",300],
-    ["Stinger","Stinger",1000],
-    ["Javelin","Javelin",1500],
-    ["Mk12 SPR","M4SPR",200],
-    ["Mk17 Sniper","SCAR_H_LNG_Sniper",500],
-    ["Mk17 Sniper SD","SCAR_H_LNG_Sniper_SD",750],
-    ["M110 NV","M110_NVG_EP1",1000],
-    ["Mk17 Sniper TWS","SCAR_H_STD_TWS_SD",1500],
-    ["M107","m107",2000],
-    ["M110 TWS","M110_TWS_EP1",2500]
+	["AK-74","AK_74",50,25],
+	["AK-107 Kobra","AK_107_kobra",75,35],
+	["AKM","AK_47_M",75,35],
+    ["M16A4","M16A4",75,35],
+    ["M4A1","M4A1",50,25],
+    ["M4A1 CCO","M4A1_Aim",100,55],
+    ["M1014","M1014",50,25],
+    ["Saiga 12K","Saiga12K",100,55],
+    ["M249","M249_EP1",250,120],
+    ["Mk_48 Mod","Mk_48",250,140],
+    ["M240","M240",250,120],
+    ["Pecheneg","Pecheneg",250,100],
+    ["RPG-7","RPG7V",300,130],
+    ["SMAW","SMAW",300,175],
+    ["Stinger","Stinger",1000,550],
+    ["Javelin","Javelin",1500,750],
+    ["Mk12 SPR","M4SPR",200,120],
+    ["Mk17 Sniper","SCAR_H_LNG_Sniper",500,233],
+    ["Mk17 Sniper SD","SCAR_H_LNG_Sniper_SD",750,455],
+    ["M110 NV","M110_NVG_EP1",1000,666],
+    ["Mk17 Sniper TWS","SCAR_H_STD_TWS_SD",1500,755],
+    ["M107","m107",2000,850],
+    ["M110 TWS","M110_TWS_EP1",2500,1000]
 ];
 
 //Gun Store Ammo List
+//Text name, classname, buy cost
 ammoArray = [
 	["30Rnd AK","30Rnd_545x39_AK",10],
 	["AKM Mag","30Rnd_762x39_AK47",10],
 	["30Rnd. STANAG","30Rnd_556x45_Stanag",10],
+    ["30Rnd. STANAG SD","30Rnd_556x45_StanagSD",30],
+    ["Mk17 Mag.","20Rnd_762x51_B_SCAR",25],
+	["Mk17 SD Mag.","20Rnd_762x51_SB_SCAR",50],
+	["10Rnd. M107","10Rnd_127x99_m107",50],
 	["8Rnd. M1014 Slug","8Rnd_B_Beneli_74Slug",10],
 	["8Rnd. Saiga 12K Slug","8Rnd_B_Saiga12_74Slug",10],
 	["200Rnd. M249 Belt","200Rnd_556x45_M249",50],
 	["100Rnd. M240","100Rnd_762x51_M240",25],
 	["PKM Mag.","100Rnd_762x54_PK",25],
-	["Mk17 Mag.","20Rnd_762x51_B_SCAR",25],
-	["Mk17 SD Mag.","20Rnd_762x51_SB_SCAR",25],
-	["10Rnd. M107","10Rnd_127x99_m107",50],
-    ["PG-7V.","PG7V",100],
+    ["PG-7V.","PG7V",85],
     ["SMAW-HEAA","SMAW_HEAA",100],
-    ["Stinger Ammo","Stinger",150],
-    ["Javelin Ammo","Javelin",150]
+    ["Stinger Ammo","Stinger",225],
+    ["Javelin Ammo","Javelin",250]
 ];
 
 //Gun Store Equipment List
+//Text name, classname, buy cost
 accessoriesArray = [
 	["Range Finder","Binocular_Vector",500],
-	["NV Goggles","NVGoggles",100]
+	["NV Goggles","NVGoggles",100],
+    ["GPS","ItemGPS", 90]
 ];
 
 //General Store Item List
-//Display Name, Class Name, Description, Buy Price, Sell Price.
+//Display Name, Class Name, Description, Picture, Buy Price, Sell Price.
 generalStore = [
-	["Water","water","404 Inc Premium Spring Water. This water comes to you fresh from a toilet cistern and is treated with only the highest quality urinal cakes. Notice: 404 Inc have tried their best to remove all remnants of urinal cake but some may still remain.","client\icons\water.paa",30,15],
-	["Canned Food","canfood","BestCo Value Cat-food. Heat treated and sealed in a 100% steel can for extra long shelf life. Warning: contents may contain organs.","client\icons\cannedfood.paa",30,15],
-	["Repair Kit","repairkits","This magic box will repair any mechanical device to its former glory. Warning: Does not work on wives/spouses/partners.","client\icons\briefcase.paa",1000,500],
-	["Medical Kit","medkits","Restore your health back to full. Disclaimer: This product was tested on animals and at least 5 bunnies died as a result.","client\icons\medkit.paa",400,200],
-	["Jerry Can (Full)","fuelFull","Top quality imported Russian petroleum, now with 10% less communism!","client\icons\jerrycan.paa",150,75],
-    ["Jerry Can (Empty)","fuelEmpty","Stolen from a US military base, possibly. On sale now, 50% off!","client\icons\jerrycan.paa",50,25],
-	["Spawn Beacon","spawnBeacon","Choose your spawn location.","",3000,1500]
+	["Water","water",localize "STR_WL_ShopDescriptions_Water","client\icons\water.paa",30,15],
+	["Canned Food","canfood",localize "STR_WL_ShopDescriptions_CanFood","client\icons\cannedfood.paa",30,15],
+	["Repair Kit","repairkits",localize "STR_WL_ShopDescriptions_RepairKit","client\icons\briefcase.paa",1000,500],
+	["Medical Kit","medkits",localize "STR_WL_ShopDescriptions_MedKit","client\icons\medkit.paa",400,200],
+	["Jerry Can (Full)","fuelFull",localize "STR_WL_ShopDescriptions_fuelFull","client\icons\jerrycan.paa",150,75],
+    ["Jerry Can (Empty)","fuelEmpty",localize "STR_WL_ShopDescriptions_fuelEmpty","client\icons\jerrycan.paa",50,25],
+	["Spawn Beacon","spawnBeacon",localize "STR_WL_ShopDescriptions_spawnBeacon","",3000,1500],
+    ["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "",300,150]  
 ];
 
-//Vars not to be changed
-playerSetupComplete = false;
-cityLocations = [];
+// Chernarus town and city array
+//Marker Name, Radius, City Name
 cityList = [
-		["ACityC_Huzrutimam",600,"Huzrutimam","city_Huzrutimam"],
-		["ACityC_Nur",200,"Nur","vill_Nur"],
-		["ACityC_Shamali",200,"Shamali","vill_Shamali"],
-		["ACityC_Rasman",200,"Rasman","vill_Rasman"],
-		["ACityC_Zavarak",200,"Zavarak","vill_Zavarak"],
-		["ACityC_Karachinar",200,"Karachinar","Karachinar"],
-		["ACityC_Ravanay",300,"Ravanay","city_Ravanay"],
-		["ACityC_Sagram",200,"Sagram","vill_Sagram"],
-		["ACityC_Nagara",200,"Nagara","vill_Nagara"],
-		["ACityC_Bastam",200,"Bastam","vill_Bastam"],
-		["ACityC_Imarat",200,"Imarat","vill_Imarat"],
-		["ACityC_Garmarud",200,"Garmarud","vill_Garmarud"],
-		["ACityC_Garmsar",200,"Garmsar","vill_Garmsar"],
-		["ACityC_Timurkalay",200,"Timurkalay","vill_Timurkalay"],
-		["ACityC_Falar",250,"Falar","vill_Falar"],
-		["ACityC_Anar",300,"Anar","city_Anar"],
-		["ACityC_FeruzAbad",200,"FeruzAbad","vill_FeruzAbad"],
-		["ACityC_Mulladost",200,"Mulladost","vill_Mulladost"],
-		["ACityC_Gospandi",300,"Gospandi","vill_Gospandi"],
-		["ACityC_LoyManara",200,"LoyManara","vill_LoyManara"],
-		["ACityC_Chardarakht",300,"Chardarakht","city_Chardarakht"],
-		["ACityC_SultanSafe",200,"SultanSafe","vill_SultanSafe"],
-		["ACityC_ChakChak",200,"ChakChak","vill_ChakChak"],
-		["ACityC_Landay",200,"Landay","vill_Landay"],
-		["ACityC_Shukurkalay",250,"Shukurkalay","vill_Shukurkalay"],
-		["ACityC_Sakhe",200,"Sakhe","vill_Sakhe"],
-		["ACityC_Jilavur",200,"Jilavur","vill_Jilavur"],
-		["ACityC_Khushab",600,"Khushab","city_Khushab"],
-		["ACityC_Kakaru",200,"Kakaru","vill_Kakaru"]
+		["Town_0",450,"Feruz Abad"],
+		["Town_1",200,"Falar"],
+		["Town_2",200,"Bastam"],
+		["Town_3",600,"Rasman"],
+		["Town_4",200,"Sagram"],			
+		["Town_5",200,"Zavarak"],
+		["Town_6",250,"Karachinar"],
+		["Town_7",200,"Ravanay"],
+		["Town_8",500,"Garmsar"],
+		["Town_9",350,"Garmarud"],
+		["Town_10",250,"Imarat"],
+		["Town_11",200,"Timurkalay"],
+		["Town_12",200,"Hazar Bagh"],
+		["Town_13",300,"Chardarakht"],
+		["Town_14",300,"Jaza"],
+		["Town_15",200,"Loy Manara"],
+		["Town_16",200,"Huzrutimam"],
+		["Town_17",300,"Sultansafe"],
+		["Town_18",300,"Chak Chak"],
+		["Town_19",200,"Ahmaday"],
+		["Town_20",200,"Landay"],
+		["Town_21",300,"Sakhe Northside"],
+		["Town_22",300,"Sakhe Southside"],
+		["Town_23",200,"Shukurkalay"],
+		["Town_24",300,"Chaman Southside"],
+		["Town_25",300,"Chaman Northside"],
+		["Town_26",200,"Jilavur"],
+		["Town_27",200,"Khushab"],
+		["Town_28",200,"Mulladost"],
+		["Town_29",200,"Gospandi"],
+		["Town_30",200,"Lalezar"],
+		["Town_31",200,"Nagara"],
+		["Town_32",300,"Nur"],
+		["Town_33",300,"Nagara Oilfield"],
+		["Town_34",200,"Shamali"],
+		["Town_35",200,"Kakaru"],
+		["Town_36",200,"Anar"]
 ];
-blacklist = ["Land_stand_small_EP1",
-		"Land_stand_meat_EP1",
-		"Land_stand_waterl_EP1",
-		"Land_Crates_stack_EP1",
-		"Land_Carpet_rack_EP1",
-		"Land_Market_stalls_01_EP1",
-		"Land_Market_stalls_02_EP1",
-		"Land_Market_shelter_EP1",
-		"Land_Misc_Well_L_EP1",
-		"Land_Misc_Well_C_EP1",
-		"Fort_StoneWall_EP1",
-		"Land_Wall_L_2m5_gate_EP1",
-		"Land_Wall_L1_gate_EP1",
-		"Land_Wall_L3_gate_EP1",
-		"Land_Wall_L3_5m_EP1",
-		"Land_Wall_L3_pillar_EP1",
-		"Land_Wall_L_Mosque_1_EP1",
-		"Land_Wall_L_Mosque_2_EP1",
-		"Wall_FenW2_6_EP1",
-		"Wall_L_2m5_EP1",
-		"Wall_L1_2m5_EP1",
-		"Wall_L1_5m_EP1",
-		"Wall_L2_5m_EP1",
-		"Wall_L3_5m_EP1",
-		"Land_BoatSmall_1",
-		"Land_D_Mlyn_Vys",
-		"Land_D_Pec_Vez1",
-		"Land_Ind_BoardsPack1",
-		"Land_Ind_Shed_02_end",
-		"Land_Ind_Shed_01_end",
-		"Land_Ind_Shed_01_main",
-		"Land_Ind_BoardsPack2",
-		"Land_Dam_Barrier_40",
-		"Land_Dam_ConcP_20",
-		"Land_Dam_Conc_20",
-		"Land_D_Pec_Vez2",
-		"Land_BoatSmall_2a",
-		"Land_BoatSmall_2b",
-		"Land_fort_artillery_nest",
-		"Land_fort_rampart",
-		"Land_Vez_Pec",
-		"Land_runway_edgelight",
-		"Land_Nav_Boathouse_PierR",
-		"Land_Nav_Boathouse_PierT",
-		"Land_Nav_Boathouse_PierL",
-		"Land_fort_bagfence_corner",
-		"Land_fort_bagfence_long",
-		"Land_fort_bagfence_round",
-		"Land_Fort_Watchtower",
-		"Land_NavigLight",
-		"Land_Panelak",
-		"Land_Panelak2",
-		"Land_Panelak3",
-		"Land_plot_green_branka",
-		"Land_plot_rust_branka",
-		"Land_plot_green_vrata",
-		"Land_plot_rust_vrata",
-		"Land_plot_istan1_rovny_gate",
-		"Land_Plot_Ohrada_Pruchozi",
-		"Land_plot_zboreny",
-		"Land_plot_zed_drevo1_branka",
-		"Land_psi_bouda",
-		"Land_A_Castle_Bastion",
-		"Land_A_Castle_Gate",
-		"Land_A_Castle_Wall1_20",
-		"Land_A_Castle_Wall1_20_Turn",
-		"Land_A_Castle_Wall1_Corner",
-		"Land_A_Castle_Wall1_End",
-		"Land_A_Castle_Wall1_End_2",
-		"Land_A_Castle_Wall2_30",
-		"Land_A_Castle_Wall2_Corner",
-		"Land_A_Castle_Wall2_End",
-		"Land_A_Castle_Wall2_End_2",
-		"Land_A_Castle_WallS_10",
-		"Land_Gate_wood2_5",
-		"Land_Ind_Expedice_2",
-		"Land_Ind_Expedice_3",
-		"Land_Ind_Timbers",
-		"Land_Rail_Semafor",
-		"Land_Rail_Zavora",
-		"Land_Stoplight02",
-		"Land_Wall_CBrk_5_D",
-		"Land_brana02nodoor",
-		"Land_plot_green_branka",
-		"Land_plot_rust_branka",
-		"Land_plot_green_vrata",
-		"Land_molo_drevo_bs",
-		"Land_molo_drevo_end",
-		"Land_nav_pier_m_2",
-		"Land_psi_bouda",
-		"Land_plot_rust_vrata",
-		"Land_rails_bridge_40",
-		"Land_seno_balik",
-		"Land_sloup_vn",
-		"Land_sloup_vn_drat",
-		"Land_sloup_vn_dratZ",
-		"Land_sloup_vn_drat_d",
-		"ZavoraAnim",
-		"Land_vez",
-		"Land_pumpa",
-		"Land_Gate_Wood1_5",
-		"Land_fortified_nest_big",
-		"Land_fortified_nest_small",
-		"Fort_Nest",
-		"Land_Fire",
-		"Land_Fire_barrel",
-		"Land_Fire_barrel_burning",
-		"Land_Fire_burning",
-		"Land_Campfire",
-		"Land_Campfire_burning",
-		"Misc_TyreHeap",
-		"Land_ConcreteBlock",
-		"Land_ConcreteRamp",
-		"Land_sign_altar",
-		"Land_Sign_Bar_RU",
-		"Land_Sign_BES",
-		"Land_sign_TEC",
-		"Land_sign_ulgano",
-		"Land_SignB_Gov",
-		"Land_SignB_GovPolice",
-		"Land_SignB_GovSchool",
-		"Land_SignB_GovSign",
-		"Land_SignB_Hotel_CZ",
-		"Land_SignB_Hotel_CZ2",
-		"Land_SignB_Hotel_CZ3",
-		"Land_SignB_Pharmacy",
-		"Land_SignB_PostOffice",
-		"Land_SignB_Pub_CZ1",
-		"Land_SignB_Pub_CZ2",
-		"Land_SignB_Pub_CZ3",
-		"Land_SignB_Pub_RU1",
-		"Land_SignB_Pub_RU2",
-		"Land_SignB_Pub_RU3",
-		"Land_Ind_Timbers",
-		"Haystack",
-		"Pile_of_wood",
-		"Land_IndPipe1_stair",
-		"Land_IndPipe1_stair_todo_delete",
-		"Land_IndPipe2_big_9",
-		"Land_IndPipe2_big_18",
-		"Land_IndPipe2_big_18ladder",
-		"Land_IndPipe2_big_support",
-		"Land_IndPipe2_bigL_R",
-		"Land_IndPipe2_bigL_L",
-		"Land_IndPipe2_bigBuild1_R",
-		"Land_IndPipe2_bigBuild1_L",
-		"Land_IndPipe2_bigBuild2_R",
-		"Land_IndPipe2_bigBuild2_L",
-		"Land_IndPipe2_big_ground1",
-		"Land_IndPipe2_big_ground2",
-		"Land_IndPipe2_T_R",
-		"Land_IndPipe2_T_L",
-		"Land_IndPipe2_Small_9",
-		"Land_IndPipe2_Small_ground1",
-		"Land_IndPipe2_Small_ground2",
-		"Land_IndPipe2_SmallBuild1_L",
-		"Land_IndPipe2_SmallBuild1_R",
-		"Land_IndPipe2_SmallBuild2_L",
-		"Land_IndPipe2_SmallBuild2_R",
-		"Land_IndPipe2_SmallL_L",
-		"Land_IndPipe2_SmallL_R",
-		"Land_nav_pier_m_2",
-		"land_nav_pier_c",
-		"land_nav_pier_c2",
-		"land_nav_pier_c2_end",
-		"land_nav_pier_c_270",
-		"land_nav_pier_c_90",
-		"land_nav_pier_c_big",
-		"land_nav_pier_C_L",
-		"land_nav_pier_C_L10",
-		"land_nav_pier_C_L30",
-		"land_nav_pier_C_R",
-		"land_nav_pier_C_R10",
-		"land_nav_pier_C_R30",
-		"land_nav_pier_c_t15",
-		"land_nav_pier_c_t20",
-		"land_nav_pier_F_17",
-		"land_nav_pier_F_23",
-		"land_nav_pier_m",
-		"land_nav_pier_m_1",
-		"land_nav_pier_m_end",
-		"land_nav_pier_M_fuel",
-		"land_nav_pier_pneu",
-		"Land_ruin_chimney",
-		"Land_ruin_corner_1",
-		"Land_ruin_corner_2",
-		"Land_ruin_rubble",
-		"Land_ruin_walldoor",
-		"Land_ruin_wall",
-		"land_nav_pier_uvaz",
-		"Land_Misc_Cargo1C",
-		"Land_Misc_Cargo1D",
-		"Land_Misc_Cargo1E",
-		"Land_Misc_Cargo1F",
-		"Land_Misc_Cargo1G",
-		"Land_Misc_Cargo2B",
-		"Land_Misc_Cargo2C",
-		"Land_Misc_Cargo2D",
-		"Land_Misc_Cargo2E",
-		"Land_Misc_deerstand",
-		"Land_Misc_GContainer_Big",
-		"Land_sign_elektrozavodsk",
-		"Land_sign_balota",
-		"Land_sign_berezino",
-		"Land_sign_chernogorsk",
-		"Land_sign_kamenka",
-		"Land_sign_kamyshovo",
-		"Land_sign_komarovo",
-		"Land_sign_prigorodki",
-		"Land_sign_solnichnyi",
-		"Land_wagon_box",
-		"Land_wagon_flat",
-		"Land_wagon_tanker",
-		"Land_Wall_CBrk_5_D",
-		"Land_Wall_CGry_5_D",
-		"Land_Wall_Gate_Ind1_L",
-		"Land_Wall_Gate_Ind1_R",
-		"Land_Gate_IndVar2_5",
-		"Land_Gate_wood1_5",
-		"Land_Gate_wood2_5",
-		"Land_Wall_Gate_Ind2A_R",
-		"Land_Wall_Gate_Ind2B_R",
-		"Land_Wall_Gate_Ind2Rail_R",
-		"Land_Wall_Gate_Village",
-		"Land_Wall_Gate_Wood1",
-		"Land_Wall_Gate_Ind2A_L",
-		"Land_Wall_Gate_Ind2B_L",
-		"Land_Wall_Gate_Ind2Rail_L"
-		];
+cityLocations = [];
