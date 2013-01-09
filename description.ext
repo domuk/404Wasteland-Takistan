@@ -29,18 +29,11 @@ class Header
 
 class RscTitles {
 	#include "addons\proving_ground\PG_rsctitles.hpp"
-	#include "client\systems\playerMenu\dialog\names.hpp"
     #include "client\systems\hud\dialog\hud.hpp"
 	#include "client\systems\playerMenu\dialog\welcome.hpp"
+	#include "client\systems\newicons.hpp"
 };
 
 class CfgSounds {
-
-	sounds[] = {PIB};
-	class PIB
-	{
-		name = "PIB";
-		sound[] = {\sound\PIB.ogg, 1, 1.0};
-		titles[] = {	};
-	};
+	sounds[] = {};	
 };

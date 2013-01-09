@@ -38,4 +38,8 @@ diag_log "Invite to group: After the checks";
 currentInvites set [count currentInvites,[getPlayerUID player,getPlayerUID _target]];
 publicVariableServer "currentInvites"; 
 
+_target setVehicleInit format["if (name player == ""%1"") then {player globalChat ""You have been invited to join %2's group"";};",name _target,name player];
+processInitCommands;
+clearVehicleInit _target;
+
 player globalChat format["you have invited %1 to join the group",name _target];

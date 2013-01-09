@@ -37,7 +37,7 @@ class Mission
 	randomSeed=10079095;
 	class Intel
 	{
-		briefingName="404Wasteland - Takistan [v2.6 Dev]";
+		briefingName="404Wasteland - Takistan [v2.7]";
 		briefingDescription="Wasteland is a harsh survival sandbox";
 		resistanceWest=0;
 		startWeather=0.25;

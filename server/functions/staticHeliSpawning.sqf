@@ -5,6 +5,8 @@
 //	@file Description: Random static helis
 //	@file Args:
 
+if(!X_Server) exitWith {};
+
 waitUntil{staticGunSpawningComplete};
 
 private ["_counter","_position","_markerName","_marker","_hint","_newPos","_countActual", "_i", "_doSpawnWreck"];
@@ -16,7 +18,7 @@ diag_log format["Static Heli Spawning Started"];
 
 while {_counter < 14} do // 8 helis spawn at the beginning
 {
-	_selectedMarker = floor (random 20);
+	_selectedMarker = floor (random 24);
     _position = getMarkerPos format ["heliSpawn_%1", _selectedMarker];
     _newPos = [_position, 25, 50, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
 	[0, _newPos] call staticHeliCreation;
