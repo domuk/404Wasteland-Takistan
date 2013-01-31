@@ -1,4 +1,3 @@
-
 //	@file Version: 1.0
 //	@file Name: init.sqf
 //	@file Author: [404] Deadbeat
@@ -6,7 +5,6 @@
 //	@file Description: The main init.
 //	@file Args:
 
-"Arma2Net.Unmanaged" callExtension "Activate";
 if (isnil "RE") then {[] execVM "\ca\Modules\MP\data\scripts\MPframework.sqf"};
 
 StartProgress = false;
@@ -16,7 +14,7 @@ X_Server = false;
 X_Client = false;
 X_JIP = false;
 hitStateVar = false;
-versionName = "v2.7";
+versionName = "v2.9";
 
 if(isServer) then { X_Server = true;};
 if(!isDedicated) then { X_Client = true;};
@@ -35,6 +33,15 @@ true spawn {
 [] execVM "briefing.sqf";
 
 if(X_Client) then {
+	waitUntil {player == player};
+
+	//Wipe Group.
+	if(count units group player > 1) then
+	{  
+		diag_log "Player Group Wiped";
+		[player] join grpNull;    
+	};
+
 	[] execVM "client\init.sqf";
 };
 

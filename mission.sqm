@@ -37,7 +37,7 @@ class Mission
 	randomSeed=10079095;
 	class Intel
 	{
-		briefingName="404Wasteland - Takistan [v2.7]";
+		briefingName="404Wasteland - Takistan [v2.9]";
 		briefingDescription="Wasteland is a harsh survival sandbox";
 		resistanceWest=0;
 		startWeather=0.25;
@@ -2735,7 +2735,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=569;
+		items=619;
 		class Item0
 		{
 			position[]={5187.9595,144.99367,6133.6113};
@@ -6149,6 +6149,356 @@ class Mission
 			position[]={6926.4971,44.391003,12314.103};
 			name="Spawn_510";
 			type="Empty";
+		};
+		class Item569
+		{
+			position[]={10338.589,601.23578,3809.0583};
+			name="Mission_1";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item570
+		{
+			position[]={7871.6758,441.76901,4670.52};
+			name="Mission_2";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item571
+		{
+			position[]={6564.4219,549.00439,3637.3672};
+			name="Mission_3";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item572
+		{
+			position[]={7025.2744,379.70251,5556.0791};
+			name="Mission_4";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item573
+		{
+			position[]={7971.0752,433.11426,6751.8843};
+			name="Mission_5";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item574
+		{
+			position[]={7353.5942,345.48511,6836.2236};
+			name="Mission_6";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item575
+		{
+			position[]={3724.0073,311.09268,6303.0806};
+			name="Mission_7";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item576
+		{
+			position[]={3230.0215,471.58603,6625.376};
+			name="Mission_8";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item577
+		{
+			position[]={3022.187,399.72195,4631.3628};
+			name="Mission_9";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item578
+		{
+			position[]={2573.3833,323.15094,4309.0674};
+			name="Mission_10";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item579
+		{
+			position[]={4736.0747,423.76913,3989.7842};
+			name="Mission_11";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item580
+		{
+			position[]={5965.0132,342.67416,4694.6157};
+			name="Mission_12";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item581
+		{
+			position[]={6058.7793,596.71252,3215.8376};
+			name="Mission_13";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item582
+		{
+			position[]={2326.6572,344.74228,2661.5081};
+			name="Mission_14";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item583
+		{
+			position[]={2403.4951,303.49258,3578.0737};
+			name="Mission_15";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item584
+		{
+			position[]={5718.4966,530.34668,2628.5774};
+			name="Mission_16";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item585
+		{
+			position[]={7107.0654,368.15964,2694.4387};
+			name="Mission_17";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item586
+		{
+			position[]={2200.4238,426.62634,1196.1005};
+			name="Mission_18";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item587
+		{
+			position[]={1344.2314,363.41693,1777.8723};
+			name="Mission_19";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item588
+		{
+			position[]={493.52734,442.80804,1953.5017};
+			name="Mission_20";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item589
+		{
+			position[]={537.43518,333.63281,3825.0503};
+			name="Mission_21";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item590
+		{
+			position[]={2677.916,340.14218,6146.6504};
+			name="Mission_22";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item591
+		{
+			position[]={2590.1013,329.65173,7304.7056};
+			name="Mission_23";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item592
+		{
+			position[]={3819.5063,381.62695,7392.521};
+			name="Mission_24";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item593
+		{
+			position[]={4856.8169,405.98343,7546.1968};
+			name="Mission_25";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item594
+		{
+			position[]={4576.9082,168.25748,8654.8564};
+			name="Mission_26";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item595
+		{
+			position[]={2935.8723,277.80478,8879.8809};
+			name="Mission_27";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item596
+		{
+			position[]={1695.4907,422.10965,9461.6533};
+			name="Mission_28";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item597
+		{
+			position[]={3232.2458,102.81612,10564.825};
+			name="Mission_29";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item598
+		{
+			position[]={3034.6631,105.07339,11755.812};
+			name="Mission_30";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item599
+		{
+			position[]={4719.606,105.88329,10553.849};
+			name="Mission_31";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item600
+		{
+			position[]={5144.1709,97.388611,11838.775};
+			name="Mission_32";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item601
+		{
+			position[]={4845.311,82.508232,11308.978};
+			name="Mission_33";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item602
+		{
+			position[]={5578.877,90.946869,10646.729};
+			name="Mission_34";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item603
+		{
+			position[]={5293.6011,78.227173,12371.97};
+			name="Mission_35";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item604
+		{
+			position[]={7626.7485,143.03961,11940.66};
+			name="Mission_36";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item605
+		{
+			position[]={7463.7344,151.31262,11037.286};
+			name="Mission_37";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item606
+		{
+			position[]={8176.3223,210.38713,10771.499};
+			name="Mission_38";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item607
+		{
+			position[]={9198.5566,170.28976,10917.533};
+			name="Mission_39";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item608
+		{
+			position[]={8015.6851,141.59161,10016.993};
+			name="Mission_40";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item609
+		{
+			position[]={6297.3564,125.10078,9364.709};
+			name="Mission_41";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item610
+		{
+			position[]={9495.4932,418.95181,7961.0977};
+			name="Mission_42";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item611
+		{
+			position[]={10026.082,222.89508,9518.79};
+			name="Mission_43";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item612
+		{
+			position[]={11165.145,189.20656,11650.879};
+			name="Mission_44";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item613
+		{
+			position[]={12009.467,694.85425,4003.6748};
+			name="Mission_45";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item614
+		{
+			position[]={10480.281,407.82932,8516.1045};
+			name="Mission_46";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item615
+		{
+			position[]={12503.652,384.88586,8997.5264};
+			name="Mission_47";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item616
+		{
+			position[]={12022.229,354.6489,7225.3325};
+			name="Mission_48";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item617
+		{
+			position[]={8533.6602,221.52585,9227.7725};
+			name="Mission_49";
+			type="Empty";
+			colorName="ColorOrange";
+		};
+		class Item618
+		{
+			position[]={10379.454,661.7467,4882.6338};
+			name="Mission_50";
+			type="Empty";
+			colorName="ColorOrange";
 		};
 	};
 };

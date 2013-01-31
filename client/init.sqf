@@ -10,6 +10,7 @@ mutexScriptInProgress = false;
 respawnDialogActive = false;
 groupManagmentActive = false;
 pvar_PlayerTeamKiller = objNull;
+doCancelAction = false;
 currentMissionsMarkers = [];
 currentRadarMarkers = [];
 
@@ -17,12 +18,11 @@ currentRadarMarkers = [];
 playerCompiledScripts = false;
 playerSetupComplete = false;
 
-waitUntil {player == player};
+waitUntil {!isNull player};
 waitUntil{time > 2};
 
 //Call client compile list.
 player call compile preprocessFileLineNumbers "client\functions\clientCompile.sqf";
-waitUntil{playerCompiledScripts};
 
 //Stop people being civ's.
 if(!(playerSide in [west, east, resistance])) then {
@@ -31,7 +31,6 @@ if(!(playerSide in [west, east, resistance])) then {
 
 //Player setup
 player call playerSetup;
-waitUntil {playerSetupComplete};
 
 //Setup player events.
 if(!isNil "client_initEH") then {player removeEventHandler ["Respawn", client_initEH];};
@@ -57,7 +56,7 @@ waituntil {!(IsNull (findDisplay 46))};
 [] execVM "client\functions\createTownMarkers.sqf";
 [] execVM "client\functions\createGunStoreMarkers.sqf";
 [] execVM "client\functions\createGeneralStoreMarkers.sqf";
-[] execVM "client\functions\loadAtmosphere.sqf";
+true execVM "client\functions\loadAtmosphere.sqf"; // Set to false to disable dust, ash and wind
 [] execVM "client\functions\playerTags.sqf";
 [] execVM "client\functions\groupTags.sqf";
 [] call updateMissionsMarkers;

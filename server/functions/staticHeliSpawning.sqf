@@ -7,16 +7,12 @@
 
 if(!X_Server) exitWith {};
 
-waitUntil{staticGunSpawningComplete};
-
 private ["_counter","_position","_markerName","_marker","_hint","_newPos","_countActual", "_i", "_doSpawnWreck"];
 _counter = 0;
 _countActual = 0;
 _i = 0;
 
-diag_log format["Static Heli Spawning Started"];
-
-while {_counter < 14} do // 8 helis spawn at the beginning
+while {_counter < 8} do // 8 helis spawn at the beginning
 {
 	_selectedMarker = floor (random 24);
     _position = getMarkerPos format ["heliSpawn_%1", _selectedMarker];
@@ -38,7 +34,7 @@ while {_counter < 14} do // 8 helis spawn at the beginning
 
 //{diag_log format["Heli %1 = %2",_forEachIndex, _x];} forEach currentStaticHelis;
 
-for "_i" from 1 to 20 do {
+for "_i" from 1 to 24 do {
     _doSpawnWreck = true;
     
     { // Check if current iteration already exists as a live heli...
@@ -63,4 +59,3 @@ for "_i" from 1 to 20 do {
 };
 
 diag_log format["WASTELAND SERVER - %1 Static helis Spawned",_countActual];
-staticHeliSpawningComplete = true;
