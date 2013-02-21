@@ -2,7 +2,7 @@
 //	@file Name: mainMissionController.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy
 //	@file Created: 08/12/2012 15:19
-
+#include "setup.sqf"
 #include "mainMissions\mainMissionDefines.sqf";
 
 if(!isServer) exitWith {};
