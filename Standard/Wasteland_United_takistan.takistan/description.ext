@@ -4,6 +4,7 @@ respawn="BASE";
 respawnDelay=15;
 disabledAI=1;
 disableChannels[]={2};
+enableItemsDropping = 0;
 class Header
 {
 	gameType=COOP;
@@ -16,6 +17,7 @@ class Header
 #include "client\systems\playerMenu\dialog\player_settings.hpp"
 #include "client\systems\groups\dialog\groupManagement.hpp"
 #include "client\systems\gunStore\dialog\gunshop_settings.hpp"
+#include "client\systems\gunStore\dialog\gunshop_ConfirmSell.hpp"
 #include "client\systems\generalStore\dialog\genstore_settings.hpp"
 #include "client\systems\adminPanel\dialog\adminMenu.hpp"
 #include "client\systems\adminPanel\dialog\modMenu.hpp"

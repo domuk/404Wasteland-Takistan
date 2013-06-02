@@ -6,7 +6,7 @@
 
 if(!X_Server) exitWith {};
 
-for "_i" from 1 to 510 do
+for "_i" from 1 to 770 do
 {
 	deleteMarker format ["Spawn_%1", _i]; // Delete all spawn markers
 };

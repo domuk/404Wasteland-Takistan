@@ -1,3 +1,9 @@
+//	@file Version: 1.0
+//	@file Name: onMouseWheel.sqf
+//	@file Author: [404] Costlyy
+//	@file Created: 03/05/13
+//	@file Args:
+
 terminate playerMenuHandle;
 playerMenuHandle = [] spawn {
 	waituntil {!isnull player};
